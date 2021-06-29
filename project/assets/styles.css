@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.header {
+  padding: 0.5rem 3rem;
+  background-color: #a8a6ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+}
+.header img {
+  width: 13rem;
+}
+
+.play__button {
+  cursor: pointer;
+  background-color: white;
+  width: 11rem;
+  height: 2.2rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.play__button:hover {
+  background-color: bisque;
+  transform: scale(1.1);
+  transition: 300ms;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  background-color: #d0dee3;
+  height: 88vh;
+  padding: 2rem;
+}
+
+.instructions__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.main__title {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.images__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.images__container img {
+  width: 10rem;
+  cursor: pointer;
+}
+
+.mouse_pointer {
+  position: absolute;
+  bottom: 8rem;
+  left: 24rem;
+  width: 3rem;
+}
+
+.button__container {
+  text-align: center;
+}
+
+.tree {
+}
+
+.two {
+}
+
+.one {
+}
+
+.counter {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #092d3d;
+  animation: color-me-in 5s;
+  height: 100vh;
+  transition: all 1s ease-out;
+}
+
+@keyframes color-me-in {
+  0% {
+    background: orange;
+  }
+  /* Adding a step in the middle */
+  50% {
+    background: blue;
+  }
+  100% {
+    background: red;
+  }
+}
+.counter__number3 {
+  display: none;
+  width: 10rem;
+  height: 10rem;
+  border: 10px solid black;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.counter__number2 {
+  display: none;
+  width: 10rem;
+  height: 10rem;
+  border: 10px solid black;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.counter__number1 {
+  display: none;
+  width: 10rem;
+  height: 10rem;
+  border: 10px solid black;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.game__button--container {
+}
+
+.game {
+  padding: 2rem;
+  background-color: #092d3d;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+}
+
+.title__game--container {
+  margin: 5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.figure__container {
+  margin: 0 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.figure__container figure:hover {
+  transform: scale(1.2);
+  transition: 500ms;
+  cursor: pointer;
+}

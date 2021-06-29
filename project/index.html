@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <title>Classic Game</title>
+  </head>
+  <body>
+    <section class="menu">
+      <header id="header" class="header">
+        <figure>
+          <img class="icon__header" src="./assets/static/icon.png" alt="Icon" />
+        </figure>
+        <div>
+          <button id="play__header" class="play__button">Play now</button>
+        </div>
+      </header>
+      <main id="main" class="main">
+        <article class="instructions__container">
+          <h2 class="main__introduction">
+            Welcome to the classic game, select into rock, paper or scissors and
+            demostrate that humans are better than machines.
+          </h2>
+          <h1 class="main__title">How to play?</h1>
+          <div class="images__container">
+            <img src="./assets/static/rock.png" alt="rock" />
+            <img src="./assets/static/paper.png" alt="paper" />
+            <img src="./assets/static/scissors.png" alt="scissors" />
+            <img src="./assets/static/mouse-icon.png" alt="mouse-icon" />
+          </div>
+          <img
+            class="mouse_pointer"
+            src="./assets/static/mouse_pointer.png"
+            alt="mouse-pointer"
+          />
+          <div class="button__container">
+            <button id="play" class="play__button">Play now</button>
+          </div>
+        </article>
+      </main>
+    </section>
+
+    <section id="counter" class="counter">
+      <article class="counter__number3">
+        <h1 class="tree">3</h1>
+      </article>
+      <article class="counter__number2">
+        <h1 class="two">2</h1>
+      </article>
+      <article class="counter__number1">
+        <h1 class="one">1</h1>
+      </article>
+    </section>
+
+    <section id="game" class="game">
+      <div class="game__button--container">
+        <button id="back" class="play__button">Back to menu</button>
+      </div>
+      <article class="title__game--container">
+        <h2>Rock, paper, scissors...</h2>
+      </article>
+      <div class="figure__container">
+        <figure id="rock__container" class="rock">
+          <img id="rock" src="./assets/static/rock.png" alt="" />
+        </figure>
+        <figure id="paper__container" class="paper">
+          <img id="paper" src="./assets/static/paper.png" alt="" />
+        </figure>
+        <figure id="scissors__container" class="scissors">
+          <img id="scissors" src="./assets/static/scissors.png" alt="" />
+        </figure>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>

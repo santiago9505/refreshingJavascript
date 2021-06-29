@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #092d3d;
+}
+
+.body__container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.title {
+  margin: 2rem;
+  font-size: 30px;
+  color: white;
+}
+.btn button {
+  font-size: 16px;
+  width: 18rem;
+  height: 3rem;
+}
+.playZone {
+  display: none;
+  margin: 2rem;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.game {
+  display: none;
+  margin: 2rem;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.option:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 500ms;
+}
+
+.winner {
+  color: aliceblue;
+}
