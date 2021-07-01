@@ -30,7 +30,7 @@
 }
 
 .play__button:hover {
-  background-color: rgb(121, 175, 100);
+  background-color: bisque;
   transform: scale(1.1);
   transition: 300ms;
 }
@@ -79,24 +79,12 @@
 }
 
 .tree {
-  animation: scale-up-center 0.9s cubic-bezier(0.2, 0.7, 0.8, 1) both;
 }
 
 .two {
-  animation: scale-up-center 2.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .one {
-  animation: scale-up-center 4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-
-@keyframes scale-up-center {
-  0% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .counter {
@@ -111,44 +99,41 @@
 
 @keyframes color-me-in {
   0% {
-    background: rgba(146, 158, 184, 0.589);
+    background: orange;
   }
   /* Adding a step in the middle */
   50% {
-    background: rgb(94, 94, 155);
+    background: blue;
   }
   100% {
-    background: rgb(55, 8, 165);
+    background: red;
   }
 }
 .counter__number3 {
-  display: flex;
+  display: none;
   width: 10rem;
   height: 10rem;
   border: 10px solid black;
   font-size: 6rem;
   text-align: center;
-  justify-content: center;
 }
 
 .counter__number2 {
-  display: flex;
+  display: none;
   width: 10rem;
   height: 10rem;
   border: 10px solid black;
   font-size: 6rem;
   text-align: center;
-  justify-content: center;
 }
 
 .counter__number1 {
-  display: flex;
+  display: none;
   width: 10rem;
   height: 10rem;
   border: 10px solid black;
   font-size: 6rem;
   text-align: center;
-  justify-content: center;
 }
 
 .game__button--container {
@@ -163,7 +148,7 @@
 }
 
 .title__game--container {
-  margin: 3rem;
+  margin: 5rem;
   color: white;
   display: flex;
   justify-content: center;
@@ -187,40 +172,4 @@
   justify-content: space-evenly;
   color: white;
   font-size: 1.5rem;
-}
-
-.option {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.buttonAgain__container {
-  display: flex;
-  justify-content: center;
-  margin: 4rem;
-}
-
-.response {
-  display: none;
-  position: absolute;
-  width: 3rem;
-}
-
-.game__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.result__container {
-  background-color: white;
-  width: 20rem;
-  height: 6rem;
-  justify-content: center;
-  border-radius: 2rem;
-  display: flex;
-  font-size: 1.3rem;
-  align-items: center;
-  gap: 2rem;
 }

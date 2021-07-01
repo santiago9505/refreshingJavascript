@@ -61,13 +61,25 @@
     </section>
 
     <section id="game" class="game">
-      <div class="game__button--container">
-        <button id="back" class="play__button">Back to menu</button>
+      <div class="game__header">
+        <div class="game__button--container">
+          <button id="back" class="play__button">Back to menu</button>
+        </div>
+        <div class="result__container">
+          <article>
+            <h3>User</h3>
+          </article>
+          <article><h2 id="scorePerson">0</h2></article>
+          <article>
+            <h2 id="scoreMachine">0</h2>
+          </article>
+          <article><h3>Cpu</h3></article>
+        </div>
       </div>
       <article class="title__game--container">
-        <h2>Rock, paper, scissors...</h2>
+        <h2 id="dynamicText">Rock, paper, scissors...</h2>
       </article>
-      <div class="figure__container">
+      <div id="select" class="figure__container">
         <figure id="rock__container" class="rock">
           <img id="rock" src="./assets/static/rock.png" alt="" />
         </figure>
@@ -77,6 +89,55 @@
         <figure id="scissors__container" class="scissors">
           <img id="scissors" src="./assets/static/scissors.png" alt="" />
         </figure>
+      </div>
+      <div id="response" class="figure__response--container">
+        <figure class="option">
+          <img id="responseUser" src="" alt="user-response" />
+          <img
+            class="response"
+            id="humanWin"
+            src="./assets/static/win-icon.png"
+            alt=""
+          />
+          <img
+            class="response"
+            id="humanLost"
+            src="./assets/static/lost-icon.png"
+            alt=""
+          />
+          <img
+            class="response"
+            id="humanTie"
+            src="./assets/static/tie-icon.png"
+            alt=""
+          />
+          <span> User </span>
+        </figure>
+        <figure class="option">
+          <img id="responseCpu" src="" alt="cpu-response" />
+          <img
+            class="response"
+            id="cpuWin"
+            src="./assets/static/win-icon.png"
+            alt=""
+          />
+          <img
+            class="response"
+            id="cpuLost"
+            src="./assets/static/lost-icon.png"
+            alt=""
+          />
+          <img
+            class="response"
+            id="cpuTie"
+            src="./assets/static/tie-icon.png"
+            alt=""
+          />
+          <span> Cpu </span>
+        </figure>
+      </div>
+      <div class="buttonAgain__container">
+        <button class="play__button" id="playAgain">Play again</button>
       </div>
     </section>
     <script src="./index.js"></script>
