@@ -25,7 +25,6 @@ const scoreCpu = document.getElementById("scoreMachine");
 const rock = 1;
 const paper = 2;
 const scissors = 3;
-let aleatoria;
 
 let user;
 let machine; //cpu
@@ -67,7 +66,7 @@ const rockSelected = () => {
   figureSelection.style.display = "none";
   responseContainer.style.display = "flex";
   resultUser.src = "./assets/static/rock.png";
-  functAleatoria();
+  playNow(user);
 };
 
 const paperSelected = () => {
@@ -75,7 +74,7 @@ const paperSelected = () => {
   figureSelection.style.display = "none";
   responseContainer.style.display = "flex";
   resultUser.src = "./assets/static/paper.png";
-  functAleatoria();
+  playNow(user);
 };
 
 const scissorsSelected = () => {
@@ -83,72 +82,95 @@ const scissorsSelected = () => {
   figureSelection.style.display = "none";
   responseContainer.style.display = "flex";
   resultUser.src = "./assets/static/scissors.png";
-  functAleatoria();
+  playNow(user);
 };
 
-const functAleatoria = () => {
-  // generatingAleatoria();
-  // if (aleatoria === rock) {
-  //   machine = rock;
-  //   resultCpu.src = "./assets/static/rock.png";
-  // } else if (aleatoria === paper) {
-  //   machine = paper;
-  //   resultCpu.src = "./assets/static/paper.png";
-  // } else if (aleatoria === scissors) {
-  //   machine = scissors;
-  //   resultCpu.src = "./assets/static/scissors.png";
-  // }
+const gettingCpu = () => {
   if (executed === false) {
     executed = true;
-    machine = paper;
+    cpu = paper;
+    resultCpu.src = "./assets/static/paper.png";
     lastSelect.machine = 2;
   } else if (result === tie) {
     if (lastSelect.machine === 3) {
-      machine = rock;
+      cpu = rock;
+      resultCpu.src = "./assets/static/rock.png";
     } else {
-      machine = lastSelect.machine + 1;
+      cpu = lastSelect.machine + 1;
+      if (cpu === 2) {
+        resultCpu.src = "./assets/static/paper.png";
+      } else if (cpu === 3) {
+        resultCpu.src = "./assets/static/scissors.png";
+      }
     }
   } else if (result === machinesWon) {
-    machine = lastSelect.user;
+    cpu = lastSelect.user;
+    if (cpu === 1) {
+      resultCpu.src = "./assets/static/rock.png";
+    } else if (cpu === 2) {
+      resultCpu.src = "./assets/static/paper.png";
+    } else if (cpu === 3) {
+      resultCpu.src = "./assets/static/scissors.png";
+    }
   } else if (result === humansWon) {
     if (lastSelect.machine === 1) {
-      machine = scissors;
+      cpu = scissors;
+      resultCpu.src = "./assets/static/scissors.png";
     } else {
-      machine = lastSelect.machine - 1;
+      cpu = lastSelect.machine - 1;
+      if (cpu === 1) {
+        resultCpu.src = "./assets/static/rock.png";
+      } else if (cpu === 2) {
+        resultCpu.src = "./assets/static/paper.png";
+      }
     }
   }
-  showResult();
 };
 
-const restartText = () => {
-  text.textContent = "Rock, paper, scissors...";
-};
+gettingUser = (selection) => (user = selection);
 
-const showResult = () => {
-  if (user === machine) {
+const playNow = (selection) => {
+  gettingCpu();
+  gettingUser(selection);
+  if (user === cpu) {
     result = tie;
-  } else if (user === rock && machine === paper) {
+    lastSelect.machine = cpu;
+    lastSelect.user = user;
+  } else if (cpu === paper && user === rock) {
     result = machinesWon;
     scoreMachine += 1;
-  } else if (user === rock && machine === scissors) {
+    lastSelect.machine = paper;
+    lastSelect.user = rock;
+  } else if (cpu === paper && user === scissors) {
     result = humansWon;
     scoreUser += 1;
-  } else if (user === paper && machine === rock) {
+    lastSelect.machine = paper;
+    lastSelect.user = scissors;
+  } else if (cpu === rock && user === paper) {
     result = humansWon;
     scoreUser += 1;
-  } else if (user === paper && machine === scissors) {
+    lastSelect.machine = rock;
+    lastSelect.user = paper;
+  } else if (cpu === rock && user === scissors) {
     result = machinesWon;
     scoreMachine += 1;
-  } else if (user === scissors && machine === paper) {
-    result = humansWon;
-    scoreUser += 1;
-  } else if (user === scissors && machine === rock) {
+    lastSelect.machine = rock;
+    lastSelect.user = scissors;
+  } else if (cpu === scissors && user === paper) {
     result = machinesWon;
     scoreMachine += 1;
+    lastSelect.machine = scissors;
+    lastSelect.user = paper;
+  } else if (cpu === scissors && user === rock) {
+    result = humansWon;
+    scoreUser += 1;
+    lastSelect.machine = scissors;
+    lastSelect.user = rock;
   }
   scorePerson.textContent = scoreUser;
   scoreCpu.textContent = scoreMachine;
   text.textContent = result;
+  console.log(`User: ${user} Cpu: ${cpu} Resultado: ${result}`);
 };
 
 const volverAJugar = () => {

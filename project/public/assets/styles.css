@@ -224,3 +224,67 @@
   align-items: center;
   gap: 2rem;
 }
+
+@media (max-width: 900px) {
+  .images__container {
+    display: block;
+  }
+  .figure__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .game {
+    padding: 2rem;
+    background-color: #092d3d;
+    height: auto;
+    display: none;
+    flex-direction: column;
+  }
+  .result__container {
+    font-size: 1.3rem;
+    width: 20rem;
+    height: 4rem;
+  }
+
+  .figure__response--container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    background-color: #d0dee3;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .images__container {
+    margin: 1rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mouse_pointer {
+    position: absolute;
+    bottom: 18rem;
+    left: 8rem;
+    width: 3rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .game__header {
+    gap: 2rem;
+    flex-direction: column;
+  }
+}
