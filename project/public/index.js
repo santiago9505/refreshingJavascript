@@ -26,15 +26,23 @@ const rock = 1;
 const paper = 2;
 const scissors = 3;
 let aleatoria;
-let user;
-let machine;
-let result;
-let scoreMachine = 0;
-let scoreUser = 0;
 
-const generatingAleatoria = () => {
-  aleatoria = Math.floor(Math.random() * (3 - 1 + 1) + 1);
-};
+let user;
+let machine; //cpu
+let result;
+
+let scoreMachine = 0; //machineScore
+let scoreUser = 0; //userScore
+
+let lastSelect = { user: 0, machine: 0 }; //new one
+let executed = false; //new one
+let machinesWon = "Machines won the war"; //new one
+let humansWon = "Humans won the war"; //new one
+let tie = "We got a tie"; //new one
+
+// const generatingAleatoria = () => {
+//   aleatoria = Math.floor(Math.random() * (3 - 1 + 1) + 1);
+// };
 
 const esconderInicio = () => {
   header.style.display = "none";
@@ -79,16 +87,35 @@ const scissorsSelected = () => {
 };
 
 const functAleatoria = () => {
-  generatingAleatoria();
-  if (aleatoria === rock) {
-    machine = rock;
-    resultCpu.src = "./assets/static/rock.png";
-  } else if (aleatoria === paper) {
+  // generatingAleatoria();
+  // if (aleatoria === rock) {
+  //   machine = rock;
+  //   resultCpu.src = "./assets/static/rock.png";
+  // } else if (aleatoria === paper) {
+  //   machine = paper;
+  //   resultCpu.src = "./assets/static/paper.png";
+  // } else if (aleatoria === scissors) {
+  //   machine = scissors;
+  //   resultCpu.src = "./assets/static/scissors.png";
+  // }
+  if (executed === false) {
+    executed = true;
     machine = paper;
-    resultCpu.src = "./assets/static/paper.png";
-  } else if (aleatoria === scissors) {
-    machine = scissors;
-    resultCpu.src = "./assets/static/scissors.png";
+    lastSelect.machine = 2;
+  } else if (result === tie) {
+    if (lastSelect.machine === 3) {
+      machine = rock;
+    } else {
+      machine = lastSelect.machine + 1;
+    }
+  } else if (result === machinesWon) {
+    machine = lastSelect.user;
+  } else if (result === humansWon) {
+    if (lastSelect.machine === 1) {
+      machine = scissors;
+    } else {
+      machine = lastSelect.machine - 1;
+    }
   }
   showResult();
 };
@@ -99,24 +126,24 @@ const restartText = () => {
 
 const showResult = () => {
   if (user === machine) {
-    result = "We got a tie";
+    result = tie;
   } else if (user === rock && machine === paper) {
-    result = "Machines won";
+    result = machinesWon;
     scoreMachine += 1;
   } else if (user === rock && machine === scissors) {
-    result = "Humans won";
+    result = humansWon;
     scoreUser += 1;
   } else if (user === paper && machine === rock) {
-    result = "Humans won";
+    result = humansWon;
     scoreUser += 1;
   } else if (user === paper && machine === scissors) {
-    result = "Machines won";
+    result = machinesWon;
     scoreMachine += 1;
   } else if (user === scissors && machine === paper) {
-    result = "Humans won";
+    result = humansWon;
     scoreUser += 1;
   } else if (user === scissors && machine === rock) {
-    result = "Machines won";
+    result = machinesWon;
     scoreMachine += 1;
   }
   scorePerson.textContent = scoreUser;
