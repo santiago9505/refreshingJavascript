@@ -238,7 +238,7 @@
   .game {
     padding: 2rem;
     background-color: #092d3d;
-    height: auto;
+    height: 80rem;
     display: none;
     flex-direction: column;
   }
@@ -261,6 +261,10 @@
     background-color: #d0dee3;
     height: auto;
     padding: 2rem;
+  }
+
+  .game {
+    align-items: center;
   }
 
   .images__container {
@@ -286,5 +290,14 @@
   .game__header {
     gap: 2rem;
     flex-direction: column;
+  }
+  .figure__response--container {
+    height: 30rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .figure__response--container img {
+    width: 160px;
+    height: 160px;
   }
 }
