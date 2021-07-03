@@ -170,7 +170,6 @@ const playNow = (selection) => {
   scorePerson.textContent = scoreUser;
   scoreCpu.textContent = scoreMachine;
   text.textContent = result;
-  console.log(`User: ${user} Cpu: ${cpu} Resultado: ${result}`);
 };
 
 const volverAJugar = () => {
